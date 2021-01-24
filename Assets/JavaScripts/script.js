@@ -26,9 +26,6 @@ const quizQuestions = [
     }
 ]
 
-let questionObject = list[index];
-let currentQuestion = questionObject.question;
-
 // Helper Function 1: question creator => exact string form object and produce a ready-to-append children element.
 const createQuestion = (obj) => {
     let questionSection = document.createElement("p");
@@ -37,20 +34,17 @@ const createQuestion = (obj) => {
     return questionSection;
 }
 
-//Helper Function 2: button creator => exact string from a list and produce a ready-to-append children element.
+//Helper Function 2: button creator => extract string from a list and produce a ready-to-append children element.
 const createOption = (string) => {
     let buttonSection = document.createElement("button");
     buttonSection.innerText = string;
     buttonSection.id = "option";
-
-    let itemSection = document.createElement("li");
-    itemSection.appendChild(buttonSection);
-    return itemSection;
+    return buttonSection;
 }
 
-// Helper Function 3: list creator => take a list of strings and product a list of button elements.
-const createList = (list) => {
-    let listSection = document.createElement("ul");
+// Helper Function 3: list creator => extract a list of strings from object and product a list of button elements.
+const createList = (obj) => {
+    let list = obj.options;
     for (let i = 0; i < list.length; i++) {
         let option = createOption(list[i]);
         listSection.appendChild(option);
@@ -58,37 +52,25 @@ const createList = (list) => {
     return listSection;
 }
 
-let test = createOption("dasdas");
+counter = 0;
 
-// counter = 0;
-
-// const printQuestion = (index) => {
-//     let currentQuestion = quizQuestions[index];
-//     let main = document.querySelector("main");
-//     main.innerHTML = "";
+const printQuestion = (pos) => {
+    let currentObject = quizQuestions[pos];
+    let main = document.querySelector("main");
+    main.innerHTML = "";
     
-//     let newQuestion = document.createElement("h2");
-//     newQuestion.innerText = currentQuestion.question;
-    
-//     let newFirstOption = document.createElement("li");
-//     newFirstOption.innerText = currentQuestion.firstOption;
+    let newQuestion = createQuestion(currentObject);
+    main.appendChild(newQuestion);
 
-//     let newSecondOption = document.createElement("li");
-//     newSecondOption.innerText = currentQuestion.secondOption;
+    let optionGroup = document.createElement("block");
+    optionGroup.id = "btn-group";
 
-//     let newThirdOption = document.createElement("li");
-//     newThirdOption.innerTest = currentQuestion.thirdOption;
+    let list = currentObject.options;
+    for (let i = 0; i < list.length; i++) {
+        let option = createOption(list[i]);
+        optionGroup.appendChild(option);
+    }
 
-//     let newFourthOption = document.createElement("li");
-//     newFourthOption.innerText = currentQuestion.fourthOption;
-
-//     let newAnswers = document.createElement("ul");
-//     newAnswers.appendChild(newFirstOption);
-//     newAnswers.appendChild(newSecondOption);
-//     newAnswers.appendChild(newThirdOption);
-//     newAnswers.appendChild(newFourthOption);
-
-
-
-
-// }
+    main.appendChild(optionGroup);
+    return main;
+}

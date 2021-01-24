@@ -29,3 +29,11 @@ main {
     font-size: larger;
     font-weight: bolder;
 }
+
+#btn-group button{
+    display: block;
+}
+
+#question {
+    text-align: left;
+}
