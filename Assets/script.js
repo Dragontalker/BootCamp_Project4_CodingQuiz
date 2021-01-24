@@ -42,17 +42,21 @@ const quizQuestions = [
     thirdQuestion = {
         question: "Arrays in JavaScript can be used to store ________.",
         answer: "4. all of the above",
+        firstOption: "1. numbers and strings",
+        secondOption: "2. other arrays",
+        thirdOption: "3. booleans",
+        fourthOption: "4. all of the above",
         get chooseFirst () {
-            return this.answer === "1. numbers and strings";
+            return this.answer === this.firstOption;
         },
         get chooseSecond () {
-            return this.answer === "2. other arrays";
+            return this.answer === this.secondOption;
         },
         get chooseThird () {
-            return this.answer === "3. booleans";
+            return this.answer === this.thirdOption;
         },
         get chooseFourth () {
-            return this.answer === "4. all of the above";
+            return this.answer === this.fourthOption;
         }
     },
     fourthQuestion = {
@@ -89,11 +93,11 @@ const quizQuestions = [
     }
 ]
 
-// Test Question 2:
-console.log(quizQuestions[1].chooseFirst);
-console.log(quizQuestions[1].chooseSecond);
-console.log(quizQuestions[1].chooseThird);
-console.log(quizQuestions[1].chooseFourth);
+// Test Question 3:
+console.log(quizQuestions[2].chooseFirst);
+console.log(quizQuestions[2].chooseSecond);
+console.log(quizQuestions[2].chooseThird);
+console.log(quizQuestions[2].chooseFourth);
 
 
 // counter = 0;
