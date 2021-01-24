@@ -24,3 +24,8 @@ main {
 #timer {
     float: right;
 }
+
+#question {
+    font-size: larger;
+    font-weight: bolder;
+}

@@ -35,13 +35,13 @@ const createQuestion = (list, index) => {
     // Create the element which contains the question from object.
     let questionSection = document.createElement("p");
     questionSection.innerText = currentQuestion;
-    questionSection.style.fontWeight = "bold";
+    questionSection.id = "question";
     return questionSection;
 }
 
 // Test
-let test1 = createQuestion(quizQuestions, 0);
-document.body.children[1].appendChild(test1);
+let helper1 = createQuestion(quizQuestions, 0);
+document.body.children[1].appendChild(helper1);
 
 // counter = 0;
 
