@@ -11,6 +11,12 @@ nav ul li {
     display: inline-block;
 }
 
+main {
+    width: 600px;
+    margin: 100px auto;
+    text-align: center;
+}
+
 #highScores {
     float: left;
 }
