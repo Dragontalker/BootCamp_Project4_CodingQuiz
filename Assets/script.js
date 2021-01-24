@@ -62,12 +62,28 @@ const quizQuestions = {
         get chooseFourth () {
             return this.answer === "4. parentheses";
         }
+    },
+    fifthQuestion: {
+        question: "A very useful tool used during development and debugging for print content to the debugger is:",
+        answer: "4. console.log",
+        get chooseFirst () {
+            return this.answer === "1. JavaScript";
+        },
+        get chooseSecond () {
+            return this.answer === "2. terminal/bash";
+        },
+        get chooseThird () {
+            return this.answer === "3. for loops";
+        },
+        get chooseFourth () {
+            return this.answer === "4. console.log";
+        }
     }
 }
 
 
-// Test: Question 4.
-console.log(quizQuestions.fourthQuestion.chooseFirst);
-console.log(quizQuestions.fourthQuestion.chooseSecond);
-console.log(quizQuestions.fourthQuestion.chooseThird);
-console.log(quizQuestions.fourthQuestion.chooseFourth);
+// Test: Question 5.
+console.log(quizQuestions.fifthQuestion.chooseFirst);
+console.log(quizQuestions.fifthQuestion.chooseSecond);
+console.log(quizQuestions.fifthQuestion.chooseThird);
+console.log(quizQuestions.fifthQuestion.chooseFourth);
