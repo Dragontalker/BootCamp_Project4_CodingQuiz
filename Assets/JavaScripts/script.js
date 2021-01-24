@@ -75,6 +75,7 @@ const printQuestion = (pos) => {
     return main;
 }
 
+// Test Buttons
 const toQ1 = () => {
     printQuestion(0);
 }
@@ -109,3 +110,13 @@ goQ4.addEventListener("click", toQ4);
 
 var goQ5 = document.getElementById("Q5");
 goQ5.addEventListener("click", toQ5);
+
+// Feature: click to start quiz.
+var startButton = document.getElementById("startQuiz");
+
+const startQuiz = () => {
+    counter = 0;
+    printQuestion(counter);
+}
+
+startButton.addEventListener("click", startQuiz);
