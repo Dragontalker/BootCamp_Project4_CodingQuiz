@@ -38,7 +38,19 @@ const createQuestion = (obj) => {
 const createOption = (string) => {
     let buttonSection = document.createElement("button");
     buttonSection.innerText = string;
-    buttonSection.id = "option";
+    buttonSection.id = "nextQuestion";
+
+    //Feature: click to next question.
+    const nextQuestion = () => {
+        if (counter === quizQuestions.length) {
+            return;
+        } else {
+            counter ++;
+            printQuestion(counter);
+        }
+    }
+
+    buttonSection.addEventListener("click", nextQuestion);
     return buttonSection;
 }
 
@@ -120,3 +132,6 @@ const startQuiz = () => {
 }
 
 startButton.addEventListener("click", startQuiz);
+
+
+
