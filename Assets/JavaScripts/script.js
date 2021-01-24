@@ -26,14 +26,6 @@ const quizQuestions = [
     }
 ]
 
-// Helper Function 1: question creator => exact string form object and produce a ready-to-append children element.
-const createQuestion = (obj) => {
-    let questionSection = document.createElement("p");
-    questionSection.innerText = obj.question;
-    questionSection.id = "question";
-    return questionSection;
-}
-
 //Helper Function 2: button creator => extract string from a list and produce a ready-to-append children element.
 const createOption = (string) => {
     let buttonSection = document.createElement("button");
@@ -72,8 +64,11 @@ const printQuestion = (pos) => {
     let main = document.querySelector("main");
     main.innerHTML = "";
     
-    let newQuestion = createQuestion(currentObject);
-    main.appendChild(newQuestion);
+    // let newQuestion = createQuestion(currentObject);
+    let questionSection = document.createElement("p");
+    questionSection.innerText = currentObject.question;
+    questionSection.id = "question";
+    main.appendChild(questionSection);
 
     let optionGroup = document.createElement("block");
     optionGroup.id = "btn-group";
