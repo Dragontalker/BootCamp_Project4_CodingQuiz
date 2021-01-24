@@ -2,3 +2,19 @@ button {
     color: white;
     background-color: purple;
 }
+
+nav {
+    height: 50px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+#highScores {
+    float: left;
+}
+
+#timer {
+    float: right;
+}
