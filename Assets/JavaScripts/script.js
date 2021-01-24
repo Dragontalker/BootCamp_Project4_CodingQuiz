@@ -30,16 +30,16 @@ const quizQuestions = [
 const createQuestion = (list, index) => {
     let questionObject = list[index];
     let currentQuestion = questionObject.question;
-    return currentQuestion;
+    
+    let questionSection = document.createElement("p");
+    questionSection.innerText = currentQuestion;
+    questionSection.style.fontWeight = "bold";
+    return questionSection;
 }
 
-// Test:
-console.log(createQuestion(quizQuestions, 0));
-console.log(createQuestion(quizQuestions, 1));
-console.log(createQuestion(quizQuestions, 2));
-console.log(createQuestion(quizQuestions, 3));
-console.log(createQuestion(quizQuestions, 4));
-
+// Test
+let test1 = createQuestion(quizQuestions, 0);
+document.body.children[1].appendChild(test1);
 
 // counter = 0;
 
