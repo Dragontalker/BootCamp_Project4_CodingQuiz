@@ -26,22 +26,39 @@ const quizQuestions = [
     }
 ]
 
-// Helper Function 1: question creator => exact string form object and produce a read-to-append children element.
-const createQuestion = (list, index) => {
-    // Exact the question object.
-    let questionObject = list[index];
-    let currentQuestion = questionObject.question;
-    
-    // Create the element which contains the question from object.
+let questionObject = list[index];
+let currentQuestion = questionObject.question;
+
+// Helper Function 1: question creator => exact string form object and produce a ready-to-append children element.
+const createQuestion = (obj) => {
     let questionSection = document.createElement("p");
-    questionSection.innerText = currentQuestion;
+    questionSection.innerText = obj.question;
     questionSection.id = "question";
     return questionSection;
 }
 
-// Test
-let helper1 = createQuestion(quizQuestions, 0);
-document.body.children[1].appendChild(helper1);
+//Helper Function 2: button creator => exact string from a list and produce a ready-to-append children element.
+const createOption = (string) => {
+    let buttonSection = document.createElement("button");
+    buttonSection.innerText = string;
+    buttonSection.id = "option";
+
+    let itemSection = document.createElement("li");
+    itemSection.appendChild(buttonSection);
+    return itemSection;
+}
+
+// Helper Function 3: list creator => take a list of strings and product a list of button elements.
+const createList = (list) => {
+    let listSection = document.createElement("ul");
+    for (let i = 0; i < list.length; i++) {
+        let option = createOption(list[i]);
+        listSection.appendChild(option);
+    }
+    return listSection;
+}
+
+let test = createOption("dasdas");
 
 // counter = 0;
 
