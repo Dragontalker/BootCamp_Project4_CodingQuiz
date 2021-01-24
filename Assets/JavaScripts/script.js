@@ -75,8 +75,42 @@ const printQuestion = (pos) => {
 
     let list = currentObject.options;
     for (let i = 0; i < list.length; i++) {
-        let option = createOption(list[i]);
-        optionGroup.appendChild(option);
+        // let option = createOption(list[i]);
+        let buttonSection = document.createElement("button");
+        buttonSection.innerText = list[i];
+
+        //Feature: click to next question.
+        const correctNext = () => {
+            if (counter === (quizQuestions.length - 1)) {
+                counter = 0;
+                console.log("Score is " + secondsLeft);
+            } else {
+                counter ++;
+                printQuestion(counter);
+            }
+        }
+
+        //Feature: click to next question.
+        const wrongNext = () => {
+            if (counter === (quizQuestions.length - 1)) {
+                counter = 0;
+            } else {
+                counter ++;
+                secondsLeft -= 10;
+                printQuestion(counter);
+            }
+        }
+
+
+
+        var penalty;
+        if (list[i] === currentObject.answer) {
+            buttonSection.addEventListener("click", correctNext);
+        } else {
+            buttonSection.addEventListener("click", wrongNext);
+        }
+
+        optionGroup.appendChild(buttonSection);
     }
 
     main.appendChild(optionGroup);
@@ -114,5 +148,7 @@ function setTime() {
     }, 1000);
 }
 
+
+// Score Page:
 
 
