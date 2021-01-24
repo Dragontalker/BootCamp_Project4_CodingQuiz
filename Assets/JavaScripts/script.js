@@ -94,9 +94,30 @@ var startButton = document.getElementById("startQuiz");
 const startQuiz = () => {
     counter = 0;
     printQuestion(counter);
+    setTime();
 }
 
 startButton.addEventListener("click", startQuiz);
+
+// Feature: timer.
+var timer = document.getElementById("timer")
+var secondsLeft = 75;
+
+function setTime() {
+    // Sets interval in variable
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      timer.textContent = "Time left: " + secondsLeft + " seconds";
+  
+      if(secondsLeft === 0) {
+        // Stops execution of action at set interval
+        clearInterval(timerInterval);
+        // Calls function to create and append image
+        // sendMessage();
+      }
+  
+    }, 1000);
+}
 
 
 

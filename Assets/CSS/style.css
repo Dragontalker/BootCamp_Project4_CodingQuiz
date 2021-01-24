@@ -1,6 +1,9 @@
 button {
     color: white;
     background-color: purple;
+    font-size: x-large;
+    padding: 10px;
+    margin: 5px auto;
 }
 
 nav {
@@ -26,7 +29,7 @@ main {
 }
 
 #question {
-    font-size: larger;
+    font-size: x-large;
     font-weight: bolder;
 }
 
@@ -36,5 +39,5 @@ main {
 }
 
 #question {
-    text-align: left;
+    text-align: center;
 }
