@@ -82,26 +82,30 @@ const quizQuestions = [
     fifthQuestion = {
         question: "A very useful tool used during development and debugging for print content to the debugger is:",
         answer: "4. console.log",
+        firstOption: "1. JavaScript",
+        secondOption: "2. terminal/bash",
+        thirdOption: "3. for loops",
+        fourthOption: "4. console.log",
         get chooseFirst () {
-            return this.answer === "1. JavaScript";
+            return this.answer === this.firstOption;
         },
         get chooseSecond () {
-            return this.answer === "2. terminal/bash";
+            return this.answer === this.secondOption;
         },
         get chooseThird () {
-            return this.answer === "3. for loops";
+            return this.answer === this.thirdOption;
         },
         get chooseFourth () {
-            return this.answer === "4. console.log";
+            return this.answer === this.fourthOption;
         }
     }
 ]
 
-// Test Question 4:
-console.log(quizQuestions[3].chooseFirst);
-console.log(quizQuestions[3].chooseSecond);
-console.log(quizQuestions[3].chooseThird);
-console.log(quizQuestions[3].chooseFourth);
+// Test Question 5:
+console.log(quizQuestions[4].chooseFirst);
+console.log(quizQuestions[4].chooseSecond);
+console.log(quizQuestions[4].chooseThird);
+console.log(quizQuestions[4].chooseFourth);
 
 
 // counter = 0;
