@@ -46,12 +46,28 @@ const quizQuestions = {
         get chooseFourth () {
             return this.answer === "4. all of the above";
         }
+    },
+    fourthQuestion: {
+        question: "String values must be enclosed within ________ when being assigned to variables.",
+        answer: "2. curly brackets",
+        get chooseFirst () {
+            return this.answer === "1. commas";
+        },
+        get chooseSecond () {
+            return this.answer === "2. curly brackets";
+        },
+        get chooseThird () {
+            return this.answer === "3. quotes";
+        },
+        get chooseFourth () {
+            return this.answer === "4. parentheses";
+        }
     }
 }
 
 
-// Test: Question 3.
-console.log(quizQuestions.thirdQuestion.chooseFirst);
-console.log(quizQuestions.thirdQuestion.chooseSecond);
-console.log(quizQuestions.thirdQuestion.chooseThird);
-console.log(quizQuestions.thirdQuestion.chooseFourth);
+// Test: Question 4.
+console.log(quizQuestions.fourthQuestion.chooseFirst);
+console.log(quizQuestions.fourthQuestion.chooseSecond);
+console.log(quizQuestions.fourthQuestion.chooseThird);
+console.log(quizQuestions.fourthQuestion.chooseFourth);
