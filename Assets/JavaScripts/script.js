@@ -74,3 +74,38 @@ const printQuestion = (pos) => {
     main.appendChild(optionGroup);
     return main;
 }
+
+const toQ1 = () => {
+    printQuestion(0);
+}
+
+const toQ2 = () => {
+    printQuestion(1);
+}
+
+const toQ3 = () => {
+    printQuestion(2);
+}
+
+const toQ4 = () => {
+    printQuestion(3);
+}
+
+const toQ5 = () => {
+    printQuestion(4);
+}
+
+var goQ1 = document.getElementById("Q1");
+goQ1.addEventListener("click", toQ1);
+
+var goQ2 = document.getElementById("Q2");
+goQ2.addEventListener("click", toQ2);
+
+var goQ3 = document.getElementById("Q3");
+goQ3.addEventListener("click", toQ3);
+
+var goQ4 = document.getElementById("Q4");
+goQ4.addEventListener("click", toQ4);
+
+var goQ5 = document.getElementById("Q5");
+goQ5.addEventListener("click", toQ5);
