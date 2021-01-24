@@ -83,7 +83,7 @@ const printQuestion = (pos) => {
         const correctNext = () => {
             if (counter === (quizQuestions.length - 1)) {
                 counter = 0;
-                console.log("Score is " + secondsLeft);
+                getScore();
             } else {
                 counter ++;
                 printQuestion(counter);
@@ -94,6 +94,7 @@ const printQuestion = (pos) => {
         const wrongNext = () => {
             if (counter === (quizQuestions.length - 1)) {
                 counter = 0;
+                getScore();
             } else {
                 counter ++;
                 secondsLeft -= 10;
@@ -131,24 +132,30 @@ startButton.addEventListener("click", startQuiz);
 // Feature: timer.
 var timer = document.getElementById("timer")
 var secondsLeft = 75;
+var timerInterval;
 
 function setTime() {
     // Sets interval in variable
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-      timer.textContent = "Time left: " + secondsLeft + " seconds";
+    timerInterval = setInterval(function() {
+    secondsLeft--;
+    timer.textContent = "Time left: " + secondsLeft + " seconds";
   
-      if(secondsLeft === 0) {
+    if(secondsLeft <= 0) {
         // Stops execution of action at set interval
         clearInterval(timerInterval);
         // Calls function to create and append image
-        // sendMessage();
-      }
+        getScore();
+    }
   
     }, 1000);
 }
 
 
 // Score Page:
+const getScore = () => {
+    clearInterval(timerInterval);
+    let main = document.querySelector("main");
+    main.innerHTML = `Score is ${secondsLeft}!`
+}
 
 
