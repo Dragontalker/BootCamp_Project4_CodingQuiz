@@ -26,6 +26,20 @@ const quizQuestions = [
     }
 ]
 
+// Helper Function 1: question creator => exact string form object and produce a read-to-append children element.
+const createQuestion = (list, index) => {
+    let questionObject = list[index];
+    let currentQuestion = questionObject.question;
+    return currentQuestion;
+}
+
+// Test:
+console.log(createQuestion(quizQuestions, 0));
+console.log(createQuestion(quizQuestions, 1));
+console.log(createQuestion(quizQuestions, 2));
+console.log(createQuestion(quizQuestions, 3));
+console.log(createQuestion(quizQuestions, 4));
+
 
 // counter = 0;
 
