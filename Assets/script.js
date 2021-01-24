@@ -22,17 +22,21 @@ const quizQuestions = [
     secondQuestion = {
         question: "The condition in an if / else statement is enchosed within ________.",
         answer: "3. parentheses",
+        firstOption: "1. quotes",
+        secondOption: "2. curly brackets",
+        thirdOption: "3. parentheses",
+        fourthOption: "4. square brackets",
         get chooseFirst () {
-            return this.answer === "1. quotes";
+            return this.answer === this.firstOption;
         },
         get chooseSecond () {
-            return this.answer === "2. curly brackets";
+            return this.answer === this.secondOption;
         },
         get chooseThird () {
-            return this.answer === "3. parentheses";
+            return this.answer === this.thirdOption;
         },
         get chooseFourth () {
-            return this.answer === "4. square brackets";
+            return this.answer === this.fourthOption;
         }
     },
     thirdQuestion = {
@@ -85,11 +89,11 @@ const quizQuestions = [
     }
 ]
 
-// Test Question 1:
-console.log(quizQuestions[0].chooseFirst);
-console.log(quizQuestions[0].chooseSecond);
-console.log(quizQuestions[0].chooseThird);
-console.log(quizQuestions[0].chooseFourth);
+// Test Question 2:
+console.log(quizQuestions[1].chooseFirst);
+console.log(quizQuestions[1].chooseSecond);
+console.log(quizQuestions[1].chooseThird);
+console.log(quizQuestions[1].chooseFourth);
 
 
 // counter = 0;
