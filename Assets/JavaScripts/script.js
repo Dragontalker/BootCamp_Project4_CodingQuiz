@@ -28,9 +28,11 @@ const quizQuestions = [
 
 // Helper Function 1: question creator => exact string form object and produce a read-to-append children element.
 const createQuestion = (list, index) => {
+    // Exact the question object.
     let questionObject = list[index];
     let currentQuestion = questionObject.question;
     
+    // Create the element which contains the question from object.
     let questionSection = document.createElement("p");
     questionSection.innerText = currentQuestion;
     questionSection.style.fontWeight = "bold";
