@@ -30,12 +30,28 @@ const quizQuestions = {
         get chooseFourth () {
             return this.answer === "4. square brackets";
         }
+    },
+    thirdQuestion: {
+        question: "Arrays in JavaScript can be used to store ________.",
+        answer: "4. all of the above",
+        get chooseFirst () {
+            return this.answer === "1. numbers and strings";
+        },
+        get chooseSecond () {
+            return this.answer === "2. other arrays";
+        },
+        get chooseThird () {
+            return this.answer === "3. booleans";
+        },
+        get chooseFourth () {
+            return this.answer === "4. all of the above";
+        }
     }
 }
 
 
-// Test: Question 2.
-console.log(quizQuestions.secondQuestion.chooseFirst);
-console.log(quizQuestions.secondQuestion.chooseSecond);
-console.log(quizQuestions.secondQuestion.chooseThird);
-console.log(quizQuestions.secondQuestion.chooseFourth);
+// Test: Question 3.
+console.log(quizQuestions.thirdQuestion.chooseFirst);
+console.log(quizQuestions.thirdQuestion.chooseSecond);
+console.log(quizQuestions.thirdQuestion.chooseThird);
+console.log(quizQuestions.thirdQuestion.chooseFourth);
