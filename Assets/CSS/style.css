@@ -32,6 +32,7 @@ main {
 
 #btn-group button{
     display: block;
+    width: 300px;
 }
 
 #question {
