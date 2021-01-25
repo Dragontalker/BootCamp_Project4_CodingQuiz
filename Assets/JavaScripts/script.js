@@ -182,8 +182,13 @@ const getScore = () => {
 
     let submitButton = document.createElement("button");
     submitButton.innerText = "Submit"
+    submitButton.addEventListener("click", storeScore);
     main.appendChild(submitButton);
 }
 
-// 
+// Store initial and score to localstorage.
+const storeScore = () => {
+    let userInitials = document.getElementById("initials").value;
+    localStorage.setItem(userInitials, secondsLeft);
+}
 
