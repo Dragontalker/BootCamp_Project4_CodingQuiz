@@ -233,6 +233,7 @@ const clearScore = () => {
 }
 
 const printHome = () => {
+    secondsLeft = 75;
     let main = document.querySelector("main");
     main.innerHTML = "";
 
