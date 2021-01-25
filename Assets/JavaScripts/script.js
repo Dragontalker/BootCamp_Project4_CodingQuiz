@@ -1,5 +1,3 @@
-localStorage.clear();
-
 const quizQuestions = [
     firstQuestion = {
         question: "Commoly used data types DO NOT include: ",
@@ -210,19 +208,46 @@ const viewHighScore = () => {
     for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
         const value = localStorage.getItem(key);
-        main.children[0].innerHTML += `<h2> User ${key} scored ${value} </h2> <br/>`;
+        main.children[0].innerHTML += `<h2> Log #${i+1}: ${key} - ${value} </h2> <br/>`;
     }
 
     let homeBtn = document.createElement("button");
     homeBtn.innerText = "Go Back";
+    homeBtn.addEventListener("click", printHome);
     main.children[0].appendChild(homeBtn);
 
     let clearBtn = document.createElement("button");
     clearBtn.innerText = "Clear Scoreboard";
+    clearBtn.addEventListener("click", clearScore);
     main.children[0].appendChild(clearBtn);
 }
 
 // Link the high score button in nav bar.
 let viewBtn = document.getElementById("highScores");
 viewBtn.addEventListener("click", viewHighScore);
+
+// Building the clear button in high score page
+const clearScore = () => {
+    localStorage.clear();
+    viewHighScore();
+}
+
+const printHome = () => {
+    let main = document.querySelector("main");
+    main.innerHTML = "";
+
+    let title = document.createElement("h1");
+    title.innerText = "Coding Quiz Challenge";
+    main.appendChild(title);
+
+    let message = document.createElement("p");
+    message.innerText = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time  by ten seconds!";
+    main.appendChild(message);
+
+    let startBtn = document.createElement("button");
+    startBtn.innerText = "Start Quiz";
+    startBtn.id = "startQuiz";
+    startBtn.addEventListener("click", startQuiz);
+    main.appendChild(startBtn)
+}
 
