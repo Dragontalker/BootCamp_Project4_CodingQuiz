@@ -94,10 +94,16 @@ const printQuestion = (pos) => {
         const wrongNext = () => {
             if (counter === (quizQuestions.length - 1)) {
                 counter = 0;
-                getScore();
+                if (secondsLeft <= 15) {
+                    secondsLeft = 0;
+                    getScore();
+                } else {
+                    getScore();
+                }
+                
             } else {
                 counter ++;
-                secondsLeft -= 10;
+                secondsLeft -= 15;
                 printQuestion(counter);
             }
         }
@@ -144,6 +150,7 @@ function setTime() {
         // Stops execution of action at set interval
         clearInterval(timerInterval);
         // Calls function to create and append image
+        secondsLeft = 0;
         getScore();
     }
   
@@ -151,11 +158,32 @@ function setTime() {
 }
 
 
-// Score Page:
+// Result Page:
 const getScore = () => {
     clearInterval(timerInterval);
     let main = document.querySelector("main");
-    main.innerHTML = `Score is ${secondsLeft}!`
+    main.innerText = "";
+    timer.textContent = "Time Up!";
+
+    let scoreTitle = document.createElement("h1");
+    scoreTitle.innerText = "All done!"
+    main.appendChild(scoreTitle);
+
+    let scoreMessage = document.createElement("p");
+    scoreMessage.innerHTML = `Your final score is ${secondsLeft}! Please enter your initials:`;
+    main.appendChild(scoreMessage);
+
+    let initialsInput = document.createElement("input");
+    initialsInput.id = "initials";
+    main.appendChild(initialsInput);
+
+    let breakLine = document.createElement("br");
+    main.appendChild(breakLine);
+
+    let submitButton = document.createElement("button");
+    submitButton.innerText = "Submit"
+    main.appendChild(submitButton);
 }
 
+// 
 
