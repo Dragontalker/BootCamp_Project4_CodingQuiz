@@ -1,3 +1,5 @@
+localStorage.clear();
+
 const quizQuestions = [
     firstQuestion = {
         question: "Commoly used data types DO NOT include: ",
@@ -190,5 +192,37 @@ const getScore = () => {
 const storeScore = () => {
     let userInitials = document.getElementById("initials").value;
     localStorage.setItem(userInitials, secondsLeft);
+    viewHighScore();
 }
+
+// Print high-score page
+const viewHighScore = () => {
+    let main = document.querySelector("main");
+    main.innerHTML = "";
+
+    let block = document.createElement("fieldset");
+    let title = document.createElement("legend");
+    title.innerText = "High-score Board";
+
+    main.appendChild(block);
+    main.children[0].appendChild(title);
+
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+        main.children[0].innerHTML += `<h2> User ${key} scored ${value} </h2> <br/>`;
+    }
+
+    let homeBtn = document.createElement("button");
+    homeBtn.innerText = "Go Back";
+    main.children[0].appendChild(homeBtn);
+
+    let clearBtn = document.createElement("button");
+    clearBtn.innerText = "Clear Scoreboard";
+    main.children[0].appendChild(clearBtn);
+}
+
+// Link the high score button in nav bar.
+let viewBtn = document.getElementById("highScores");
+viewBtn.addEventListener("click", viewHighScore);
 
