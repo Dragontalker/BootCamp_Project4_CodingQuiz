@@ -200,7 +200,7 @@ const viewHighScore = () => {
 
     let block = document.createElement("fieldset");
     let title = document.createElement("legend");
-    title.innerText = "High-score Board";
+    title.innerText = "Recent Logged Scores";
 
     main.appendChild(block);
     main.children[0].appendChild(title);
@@ -250,5 +250,7 @@ const printHome = () => {
     startBtn.id = "startQuiz";
     startBtn.addEventListener("click", startQuiz);
     main.appendChild(startBtn)
+
+    timer.innerText = "Get Ready!";
 }
 
