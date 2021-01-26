@@ -4,8 +4,19 @@ var secondsLeft = 75;
 var timerInterval;
 
 // Button links:
+
+// Start Button on Home Page
+// From here,
 var startButton = document.getElementById("startQuiz");
+
+const startQuiz = () => {
+    counter = 0;
+    printQuestion(counter);
+    setTime();
+}
+
 startButton.addEventListener("click", startQuiz);
+// End here.
 
 
 const quizQuestions = [
@@ -130,13 +141,6 @@ const printQuestion = (pos) => {
 
     main.appendChild(optionGroup);
     return main;
-}
-
-
-const startQuiz = () => {
-    counter = 0;
-    printQuestion(counter);
-    setTime();
 }
 
 
