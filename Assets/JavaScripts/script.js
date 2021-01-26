@@ -1,5 +1,11 @@
 // Global variables:
 var counter = 0;
+var secondsLeft = 75;
+var timerInterval;
+
+// Button links:
+var startButton = document.getElementById("startQuiz");
+startButton.addEventListener("click", startQuiz);
 
 
 const quizQuestions = [
@@ -126,8 +132,6 @@ const printQuestion = (pos) => {
     return main;
 }
 
-// Feature: click to start quiz.
-var startButton = document.getElementById("startQuiz");
 
 const startQuiz = () => {
     counter = 0;
@@ -135,12 +139,11 @@ const startQuiz = () => {
     setTime();
 }
 
-startButton.addEventListener("click", startQuiz);
+
 
 // Feature: timer.
 var timer = document.getElementById("timer")
-var secondsLeft = 75;
-var timerInterval;
+
 
 function setTime() {
     // Sets interval in variable
