@@ -1,3 +1,7 @@
+// Global variables:
+var counter = 0;
+
+
 const quizQuestions = [
     firstQuestion = {
         question: "Commoly used data types DO NOT include: ",
@@ -56,8 +60,6 @@ const createList = (obj) => {
     }
     return listSection;
 }
-
-counter = 0;
 
 const printQuestion = (pos) => {
     let currentObject = quizQuestions[pos];
