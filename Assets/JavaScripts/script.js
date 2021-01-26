@@ -1,8 +1,3 @@
-// Global variables:
-var counter = 0;
-var secondsLeft = 75;
-var timerInterval;
-
 const quizQuestions = [
     firstQuestion = {
         question: "Commoly used data types DO NOT include: ",
@@ -30,24 +25,6 @@ const quizQuestions = [
         answer: "console.log"
     }
 ]
-
-// Button links:
-
-// Start Button on Home Page
-// From here,
-var startButton = document.getElementById("startQuiz");
-
-const startQuiz = () => {
-    counter = 0;
-    printQuestion(counter);
-    setTime();
-}
-
-startButton.addEventListener("click", startQuiz);
-// End here.
-
-
-
 
 //Helper Function 2: button creator => extract string from a list and produce a ready-to-append children element.
 const createOption = (string) => {
@@ -79,6 +56,8 @@ const createList = (obj) => {
     }
     return listSection;
 }
+
+counter = 0;
 
 const printQuestion = (pos) => {
     let currentObject = quizQuestions[pos];
@@ -115,7 +94,7 @@ const printQuestion = (pos) => {
         const wrongNext = () => {
             if (counter === (quizQuestions.length - 1)) {
                 counter = 0;
-                if (secondsLeft <= 15) {
+                if (secondsLeft <= 10) {
                     secondsLeft = 0;
                     getScore();
                 } else {
@@ -124,7 +103,7 @@ const printQuestion = (pos) => {
                 
             } else {
                 counter ++;
-                secondsLeft -= 15;
+                secondsLeft -= 10;
                 printQuestion(counter);
             }
         }
@@ -145,11 +124,21 @@ const printQuestion = (pos) => {
     return main;
 }
 
+// Feature: click to start quiz.
+var startButton = document.getElementById("startQuiz");
 
+const startQuiz = () => {
+    counter = 0;
+    printQuestion(counter);
+    setTime();
+}
+
+startButton.addEventListener("click", startQuiz);
 
 // Feature: timer.
 var timer = document.getElementById("timer")
-
+var secondsLeft = 75;
+var timerInterval;
 
 function setTime() {
     // Sets interval in variable
