@@ -57,7 +57,8 @@ const createList = (obj) => {
     return listSection;
 }
 
-counter = 0;
+//Global varriable: to track which question is currently displaying.
+var counter = 0;
 
 const printQuestion = (pos) => {
     let currentObject = quizQuestions[pos];
