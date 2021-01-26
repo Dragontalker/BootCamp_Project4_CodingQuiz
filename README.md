@@ -4,7 +4,7 @@ https://dragontalker.github.io/BootCamp_Project4_CodingQuiz/
 
 ## Overview
 
-This project builds a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code.  
+This project builds a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code.  For example, once the choice is clicked by user, the built-in JavaScript will automatically constructe new HTML elements and form a new question. Another important feature is countdown timer, which will be penalized for choosing the wrong answer. The last feature is a scoreboard linked to localStorage, once the score is stored, it will still show in the scoreboard as long as user does not clear the localStorage.
 
 ## Screenshots
 
