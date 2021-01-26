@@ -3,22 +3,6 @@ var counter = 0;
 var secondsLeft = 75;
 var timerInterval;
 
-// Button links:
-
-// Start Button on Home Page
-// From here,
-var startButton = document.getElementById("startQuiz");
-
-const startQuiz = () => {
-    counter = 0;
-    printQuestion(counter);
-    setTime();
-}
-
-startButton.addEventListener("click", startQuiz);
-// End here.
-
-
 const quizQuestions = [
     firstQuestion = {
         question: "Commoly used data types DO NOT include: ",
@@ -46,6 +30,24 @@ const quizQuestions = [
         answer: "console.log"
     }
 ]
+
+// Button links:
+
+// Start Button on Home Page
+// From here,
+var startButton = document.getElementById("startQuiz");
+
+const startQuiz = () => {
+    counter = 0;
+    printQuestion(counter);
+    setTime();
+}
+
+startButton.addEventListener("click", startQuiz);
+// End here.
+
+
+
 
 //Helper Function 2: button creator => extract string from a list and produce a ready-to-append children element.
 const createOption = (string) => {
