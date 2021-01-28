@@ -132,6 +132,8 @@ const startQuiz = () => {
     counter = 0;
     printQuestion(counter);
     setTime();
+
+    document.getElementById("highScores").style.visibility = "hidden";
 }
 
 startButton.addEventListener("click", startQuiz);
@@ -235,6 +237,8 @@ const clearScore = () => {
 
 const printHome = () => {
     secondsLeft = 75;
+    document.getElementById("highScores").style.visibility = "visible";
+
     let main = document.querySelector("main");
     main.innerHTML = "";
 
