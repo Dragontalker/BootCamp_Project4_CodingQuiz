@@ -1,6 +1,6 @@
 # Project: Coding Quiz
 ## Deployed Link: 
-https://dragontalker.github.io/BootCamp_Project4_CodingQuiz/
+https://dragontalker.github.io/Coding_Quiz/
 
 ## Overview
 
